@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRUTAL SCHOLAR — Open Access Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero brutal-box">
+    <p class="tag">OPEN ACCESS ONLY</p>
+    <h1>BRUTAL SCHOLAR</h1>
+    <p class="subtitle">Cari jurnal / artikel / buku + PDF, filter insight, dan dapatkan ringkasan top 3 paper.</p>
+  </header>
+
+  <main class="layout">
+    <section class="search-panel brutal-box">
+      <form id="searchForm">
+        <label for="query">Topik / kata kunci</label>
+        <input id="query" name="query" type="text" placeholder="contoh: renewable energy policy" required />
+
+        <div class="filters">
+          <label for="contentType">Jenis konten</label>
+          <select id="contentType">
+            <option value="all">Semua (Jurnal + Buku + Lainnya)</option>
+            <option value="article">Artikel/Jurnal</option>
+            <option value="book">Buku</option>
+            <option value="other">Lainnya (preprint/repository)</option>
+          </select>
+          <label><input type="checkbox" id="openOnly" checked disabled /> Hanya Open Access</label>
+          <label><input type="checkbox" id="pdfOnly" checked disabled /> Wajib Ada PDF</label>
+        </div>
+
+        <details open>
+          <summary><strong>Filter Insight (Scite-like)</strong></summary>
+          <div class="insight-filters">
+            <label><input type="checkbox" class="facet" value="tldr" checked /> TL;DR</label>
+            <label><input type="checkbox" class="facet" value="conclusion" checked /> Conclusions</label>
+            <label><input type="checkbox" class="facet" value="sabstract" checked /> Summarized Abstract</label>
+            <label><input type="checkbox" class="facet" value="results" checked /> Results</label>
+            <label><input type="checkbox" class="facet" value="sintro" checked /> Summarized Introduction</label>
+            <label><input type="checkbox" class="facet" value="methods" checked /> Methods Used</label>
+            <label><input type="checkbox" class="facet" value="lit" checked /> Literature Survey</label>
+            <label><input type="checkbox" class="facet" value="limitations" checked /> Limitations</label>
+            <label><input type="checkbox" class="facet" value="contrib" checked /> Contributions</label>
+            <label><input type="checkbox" class="facet" value="implications" checked /> Practical Implications</label>
+            <label><input type="checkbox" class="facet" value="objectives" checked /> Objectives</label>
+            <label><input type="checkbox" class="facet" value="findings" checked /> Findings</label>
+          </div>
+        </details>
+
+        <button type="submit">CARI SEKARANG</button>
+      </form>
+    </section>
+
+    <section class="results-panel brutal-box">
+      <div class="panel-head">
+        <h2>Hasil Pencarian</h2>
+        <span id="resultCount">0 item</span>
+      </div>
+      <div id="resultCards" class="cards"></div>
+    </section>
+  </main>
+
+  <section class="insight-panel brutal-box">
+    <h2>Rangkuman Top 3 Paper</h2>
+    <div id="top3" class="top3"></div>
+  </section>
+
+  <section class="insight-panel brutal-box">
+    <h2>TABEL ANALISIS PAPER</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Judul</th><th>Tahun</th><th>TL;DR</th><th>Results</th><th>Conclusion</th><th>Limitations</th><th>Sitasi APA</th><th>PDF</th>
+          </tr>
+        </thead>
+        <tbody id="insightBody"><tr><td colspan="8" class="placeholder">Belum ada data dipilih.</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
