@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRUTAL SCHOLAR — Open Access Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero brutal-box">
+    <p class="tag">OPEN ACCESS ONLY</p>
+    <h1>BRUTAL SCHOLAR</h1>
+    <p class="subtitle">Cari jurnal / artikel / buku + PDF lalu baca ringkasan hasil, conclusion, dan keterbatasan penelitian dalam format tabel seperti ala Scite.</p>
+  </header>
+
+  <main class="layout">
+    <section class="search-panel brutal-box">
+      <form id="searchForm">
+        <label for="query">Topik / kata kunci</label>
+        <input id="query" name="query" type="text" placeholder="contoh: renewable energy policy" required />
+
+        <div class="filters">
+          <label><input type="checkbox" id="typeArticle" checked /> Artikel/Jurnal</label>
+          <label><input type="checkbox" id="typeBook" checked /> Buku</label>
+          <label><input type="checkbox" id="openOnly" checked disabled /> Hanya Open Access</label>
+          <label><input type="checkbox" id="pdfOnly" checked disabled /> Wajib Ada PDF</label>
+        </div>
+
+        <button type="submit">CARI SEKARANG</button>
+      </form>
+      <p class="hint">Sumber data: Crossref + OpenAlex + OpenLibrary (demo frontend tanpa backend key).</p>
+    </section>
+
+    <section class="results-panel brutal-box">
+      <div class="panel-head">
+        <h2>Hasil Pencarian</h2>
+        <span id="resultCount">0 item</span>
+      </div>
+      <div id="resultCards" class="cards"></div>
+    </section>
+  </main>
+
+  <section class="insight-panel brutal-box">
+    <h2>TABEL ANALISIS PAPER</h2>
+    <p class="insight-note">Klik salah satu hasil untuk mengisi tabel otomatis.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Judul</th>
+            <th>Tahun</th>
+            <th>Hasil Utama</th>
+            <th>Conclusion</th>
+            <th>Keterbatasan Penelitian</th>
+            <th>PDF</th>
+          </tr>
+        </thead>
+        <tbody id="insightBody">
+          <tr><td colspan="6" class="placeholder">Belum ada data dipilih.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built with brutalist UI blocks. Untuk produksi, gunakan backend proxy + semantic summarizer model.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
