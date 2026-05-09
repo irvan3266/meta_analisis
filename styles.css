@@ -12,3 +12,4 @@ button{width:100%;padding:.8rem;border:3px solid var(--ink);background:var(--acc
 .table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:1100px}th,td{border:3px solid var(--ink);padding:.6rem;vertical-align:top}th{background:var(--accent);text-transform:uppercase}.placeholder{text-align:center;font-style:italic}
 .suggestions{margin-top:.45rem;padding:.4rem;background:#fff}.s-item{width:100%;text-align:left;margin:.2rem 0;background:#fff34d}
 @media (max-width:900px){.layout{grid-template-columns:1fr}.insight-filters{grid-template-columns:1fr}}
+.download-btn{margin-top:.8rem;background:#111;color:#fff}
